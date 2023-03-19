@@ -38,6 +38,7 @@ pub struct TimeToLive {
 
 impl TimeToLive {
     /// Instantiate a new [`TimeToLive`] component with time remaining set to `duration`.
+    #[must_use]
     pub fn new(duration: Duration) -> Self {
         Self {
             time_remaining: duration.as_secs_f32(),
