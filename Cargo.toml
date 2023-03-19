@@ -4,9 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [features]
-default = ["halia_cleanup", "halia_fixed_timestep", "halia_transform2"]
+default = ["halia_cleanup", "halia_fixed_timestep", "halia_time_to_live", "halia_transform2"]
 halia_cleanup = []
 halia_fixed_timestep = []
+halia_time_to_live = []
 halia_transform2 = []
 
 [dependencies]
@@ -14,6 +15,7 @@ bevy = "0.10.0"
 
 [dev-dependencies]
 lerp = "0.4"
+rand = "0.8"
 
 [workspace]
 resolver = "2"

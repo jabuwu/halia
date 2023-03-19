@@ -49,9 +49,11 @@ macro_rules! features {
     }
 }
 
+#[rustfmt::skip]
 features!(
     ("halia_cleanup", cleanup, CleanupPlugin),
     ("halia_fixed_timestep", fixed_timestep, FixedTimestepPlugin),
+    ("halia_time_to_live", time_to_live, TimeToLivePlugin),
     ("halia_transform2", transform2, Transform2Plugin)
 );
 
