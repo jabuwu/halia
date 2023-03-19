@@ -47,4 +47,7 @@ macro_rules! features {
     }
 }
 
-features!(("halia_transform2", transform2, Transform2Plugin));
+features!(
+    ("halia_fixed_timestep", fixed_timestep, FixedTimestepPlugin),
+    ("halia_transform2", transform2, Transform2Plugin)
+);
