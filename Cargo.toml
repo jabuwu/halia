@@ -1,0 +1,13 @@
+[package]
+name = "halia"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.10.0"
+
+[workspace]
+resolver = "2"
+members = [
+    "ci"
+]
