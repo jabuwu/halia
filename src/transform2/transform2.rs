@@ -7,7 +7,9 @@ pub enum Transform2System {
     Transform2Propagate,
 }
 
-/// Collection of all enabled Halia plugins.
+/// Adds 2D transform functionality.
+///
+/// Contained within [`HaliaPlugins`](`crate::HaliaPlugins`).
 pub struct Transform2Plugin;
 
 impl Plugin for Transform2Plugin {
