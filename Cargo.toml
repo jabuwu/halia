@@ -4,7 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [features]
-default = ["halia_fixed_timestep", "halia_transform2"]
+default = ["halia_cleanup", "halia_fixed_timestep", "halia_transform2"]
+halia_cleanup = []
 halia_fixed_timestep = []
 halia_transform2 = []
 

@@ -5,7 +5,9 @@
 #![allow(
     clippy::module_inception,
     clippy::module_name_repetitions,
-    clippy::needless_pass_by_value
+    clippy::needless_pass_by_value,
+    clippy::redundant_closure_for_method_calls,
+    clippy::type_complexity
 )]
 
 use bevy::{app::PluginGroupBuilder, prelude::*};
@@ -48,6 +50,15 @@ macro_rules! features {
 }
 
 features!(
+    ("halia_cleanup", cleanup, CleanupPlugin),
     ("halia_fixed_timestep", fixed_timestep, FixedTimestepPlugin),
     ("halia_transform2", transform2, Transform2Plugin)
 );
+
+/// A marker component indicating that an entity must not be automatically despawned by state
+/// transitions or other cleanup systems.
+///
+/// This should only be added to parentless entities since cleanup functions search for parent
+/// entities and despawn recursively.
+#[derive(Clone, Component, Copy, Default)]
+pub struct Persistent;
