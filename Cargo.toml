@@ -3,8 +3,15 @@ name = "halia"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+default = ["halia_transform2"]
+halia_transform2 = []
+
 [dependencies]
 bevy = "0.10.0"
+
+[dev-dependencies]
+lerp = "0.4"
 
 [workspace]
 resolver = "2"
