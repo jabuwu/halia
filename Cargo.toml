@@ -10,6 +10,7 @@ default = [
     "halia_fixed_timestep",
     "halia_force_ratio",
     "halia_sets",
+    "halia_sub_assets",
     "halia_time_to_live",
     "halia_transform2"
 ]
@@ -18,6 +19,7 @@ halia_cursor = []
 halia_fixed_timestep = ["halia_transform2"]
 halia_force_ratio = []
 halia_sets = []
+halia_sub_assets = []
 halia_time_to_live = ["halia_fixed_timestep"]
 halia_transform2 = []
 
