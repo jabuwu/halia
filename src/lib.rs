@@ -55,6 +55,7 @@ features!(
     ("halia_cursor", cursor, CursorPlugin),
     ("halia_fixed_timestep", fixed_timestep, FixedTimestepPlugin),
     ("halia_force_ratio", force_ratio, ForceRatioPlugin),
+    ("halia_sets", sets, SetsPlugin),
     ("halia_time_to_live", time_to_live, TimeToLivePlugin),
     ("halia_transform2", transform2, Transform2Plugin)
 );
