@@ -52,6 +52,7 @@ macro_rules! features {
 #[rustfmt::skip]
 features!(
     ("halia_cleanup", cleanup, CleanupPlugin),
+    ("halia_cursor", cursor, CursorPlugin),
     ("halia_fixed_timestep", fixed_timestep, FixedTimestepPlugin),
     ("halia_force_ratio", force_ratio, ForceRatioPlugin),
     ("halia_time_to_live", time_to_live, TimeToLivePlugin),
