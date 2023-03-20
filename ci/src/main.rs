@@ -16,6 +16,8 @@ fn main() -> Result<()> {
     let sh = Shell::new()?;
     clippy(&sh, &halia_features)?;
     check(&sh, &halia_features)?;
+    test(&sh)?;
+    doc_test(&sh)?;
     doc_check(&sh)?;
     Ok(())
 }
@@ -43,6 +45,20 @@ fn check(sh: &Shell, halia_features: &Vec<String>) -> Result<()> {
         .run()?;
     }
     cmd!(sh, "cargo check").run()?;
+    Ok(())
+}
+
+fn test(sh: &Shell) -> anyhow::Result<()> {
+    cmd!(
+        sh,
+        "cargo test --workspace --lib --bins --tests --all-features"
+    )
+    .run()?;
+    Ok(())
+}
+
+fn doc_test(sh: &Shell) -> anyhow::Result<()> {
+    cmd!(sh, "cargo test --workspace --doc").run()?;
     Ok(())
 }
 

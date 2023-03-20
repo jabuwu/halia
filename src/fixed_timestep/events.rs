@@ -6,6 +6,9 @@ use bevy::prelude::*;
 /// timestep systems. Events will continue to work properly in non-fixed timestep systems as well.
 ///
 /// ```
+/// # use bevy::prelude::*;
+/// # use halia::prelude::*;
+/// # pub struct MyEvent;
 /// // before:
 /// App::new().add_event::<MyEvent>();
 ///

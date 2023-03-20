@@ -15,6 +15,8 @@ use bevy::prelude::*;
 /// A generic set meant to be used with events. `T` represents the event.
 ///
 /// ```
+/// # use bevy::prelude::*;
+/// # use halia::prelude::*;
 /// #[derive(Default)]
 /// pub struct MyEvent;
 ///
@@ -23,6 +25,8 @@ use bevy::prelude::*;
 ///     .add_system(my_event_sender.in_set(EventSet::<MyEvent>::Sender))
 ///     .add_system(my_event_receiver.after(EventSet::<MyEvent>::Sender))
 ///     .run();
+/// # fn my_event_sender() {}
+/// # fn my_event_receiver() {}
 /// ```
 #[derive(Copy, SystemSet)]
 pub enum EventSet<T: Send + Sync + 'static> {
