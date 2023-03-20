@@ -14,22 +14,9 @@ fn main() -> Result<()> {
         .collect::<Vec<_>>();
 
     let sh = Shell::new()?;
-    check(&sh, &halia_features)?;
     clippy(&sh, &halia_features)?;
+    check(&sh, &halia_features)?;
     doc_check(&sh)?;
-    Ok(())
-}
-
-fn check(sh: &Shell, halia_features: &Vec<String>) -> Result<()> {
-    cmd!(sh, "cargo check --no-default-features").run()?;
-    for halia_feature in halia_features {
-        cmd!(
-            sh,
-            "cargo check --no-default-features --features {halia_feature}"
-        )
-        .run()?;
-    }
-    cmd!(sh, "cargo check").run()?;
     Ok(())
 }
 
@@ -43,6 +30,19 @@ fn clippy(sh: &Shell, halia_features: &Vec<String>) -> Result<()> {
         .run()?;
     }
     cmd!(sh, "cargo clippy -- -D warnings").run()?;
+    Ok(())
+}
+
+fn check(sh: &Shell, halia_features: &Vec<String>) -> Result<()> {
+    cmd!(sh, "cargo check --no-default-features").run()?;
+    for halia_feature in halia_features {
+        cmd!(
+            sh,
+            "cargo check --no-default-features --features {halia_feature}"
+        )
+        .run()?;
+    }
+    cmd!(sh, "cargo check").run()?;
     Ok(())
 }
 
